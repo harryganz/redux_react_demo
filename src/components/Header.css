@@ -1,0 +1,10 @@
+.page-header {
+  padding: 1em 2em;
+  border-bottom: 1px solid #ddd;
+  background-color: #000;
+}
+
+.page-header h1 {
+  color: #fff;
+  text-align: center;
+}
