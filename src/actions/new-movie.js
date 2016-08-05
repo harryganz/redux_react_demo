@@ -36,7 +36,7 @@ function fetchNewMovie (title) {
         if (err || !res.ok) {
           dispatch(errorNewMovie('Problem getting data from OMDB.'));
         }
-        let data = JSON.parse(res.body);
+        let data = res.body;
         if (data.Error) {
           dispatch(errorNewMovie('Could not find movie.'));
         } else {
