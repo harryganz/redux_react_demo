@@ -3,15 +3,16 @@ import {fetchNewMovie} from '../actions/new-movie.js';
 import NewMovieView from './NewMovieView';
 
 function mapStateToProps (state) {
-  let {error, isFetching, hasMovie} = state;
-  let {title, year, rating} = state.movie;
+  let {error, isFetching, hasMovie} = state.newMovie;
+  let {title, year, rating, poster} = state.newMovie.movie;
   return {
     error: error,
     isFetching: isFetching,
     hasMovie: hasMovie,
     title: title,
     year: year,
-    rating: rating
+    rating: rating,
+    poster: poster
   };
 }
 

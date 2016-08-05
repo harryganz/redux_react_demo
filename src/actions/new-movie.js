@@ -5,12 +5,13 @@ function requestNewMovie () {
   return {type: REQUEST_NEW_MOVIE};
 }
 
-function receiveNewMovie (title, year, rating) {
+function receiveNewMovie (title, year, rating, poster) {
   return {
     type: RECIEVE_NEW_MOVIE,
     title: title,
     year: year,
-    rating: rating || 'NA'
+    rating: rating || 'NA',
+    poster: poster || ''
   };
 }
 
@@ -40,8 +41,8 @@ function fetchNewMovie (title) {
         if (data.Error) {
           dispatch(errorNewMovie('Could not find movie.'));
         } else {
-          let {Title, Year, imdbRating} = data;
-          dispatch(receiveNewMovie(Title, Year, imdbRating));
+          let {Title, Year, imdbRating, Poster} = data;
+          dispatch(receiveNewMovie(Title, Year, imdbRating, Poster));
         }
       });
   };

@@ -4,14 +4,14 @@ import Loading from './Loading';
 import ErrorMessage from './ErrorMessage';
 import NewMovieForm from './NewMovieForm';
 
-function NewMovieView ({error, isFetching, hasMovie, title, rating, year, search}) {
+function NewMovieView ({error, isFetching, hasMovie, title, rating, year, poster, search}) {
   let movie;
   if (error) {
     movie = <ErrorMessage error={error} />;
   } else if (isFetching) {
     movie = <Loading />;
   } else if (hasMovie) {
-    movie = <NewMovie title={title} rating={rating} year={year} />;
+    movie = <NewMovie title={title} rating={rating} year={year} poster={poster}/>;
   } else {
     movie = '';
   }

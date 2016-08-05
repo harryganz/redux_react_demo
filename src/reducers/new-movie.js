@@ -19,7 +19,7 @@ function newMovie (currentState = initialState, action) {
     case RECIEVE_NEW_MOVIE:
       newState = Object.assign({}, initialState);
       newState.hasMovie = true;
-      newState.movie = {title: action.title, year: action.year, rating: action.rating};
+      newState.movie = {title: action.title, year: action.year, rating: action.rating, poster: action.poster};
       return newState;
     case ERROR_NEW_MOVIE:
       newState = Object.assign({}, initialState);
